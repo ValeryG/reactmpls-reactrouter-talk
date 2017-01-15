@@ -1,15 +1,18 @@
 import React from 'react';
+import {Link} from 'react-router';
 
-export default () => (
+export default ({children}) => (
     <div>
         <h1 className="text-center" style={{color:'red'}}>Life Planner!</h1>
 
-        <a href="#">Home</a> {' | '}
-        <a href="#/places">Places To Visit</a> {' | '}
-        <a href="#/books">Books To Read</a> {' | '}
-        <a href="#/songs">Songs to Listen</a> {' | '}
-        <a href="#/about">About</a>
+        <Link to="">Home</Link> {' | '}
+        <Link to="places">Places To Visit</Link> {' | '}
+        <Link to="books">Books To Read</Link> {' | '}
+        <Link to="songs">Songs to Listen</Link> {' | '}
+        <Link to="about">About</Link>
 
         <hr />
+
+        {children}
     </div>
 )
