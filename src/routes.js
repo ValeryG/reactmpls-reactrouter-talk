@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, IndexRoute} from 'react-router';
+import {Route, IndexRoute, IndexRedirect} from 'react-router';
 
 
 import LivePlanner from './components/LifePlanner';
@@ -11,8 +11,8 @@ import Books from './components/Books';
 
 export default (
     <Route path="/" component={LivePlanner}>
-        <IndexRoute component={Home} />
-        
+        <IndexRedirect to="/home" />
+
         <Route path="home" component={Home} />
         <Route path="songs" component={Songs} />
         <Route path="books" component={Books} />
