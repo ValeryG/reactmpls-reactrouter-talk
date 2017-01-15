@@ -9,16 +9,20 @@ import About from './components/About';
 import Places from './components/Places';
 import Books from './components/Books';
 
+import Lyrics from './components/Lyrics';
+
 export default (
     <Route path="/" component={LivePlanner}>
         <IndexRedirect to="/home" />
 
         <Route path="home" component={Home} />
-        <Route path="songs" component={Songs} />
+        <Route path="songs" component={Songs}>
+            <Route path=":id" component={Lyrics} />
+        </Route>
         <Route path="books" component={Books} />
         <Route path="places" component={Places} />
         <Route path="about" component={About} />
-        
+
         <Route  path="*" component={() => <div> Page not found </div>} status={404} />
     </Route>
 )

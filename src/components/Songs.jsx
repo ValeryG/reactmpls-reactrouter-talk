@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default React.createClass({
 
@@ -15,13 +16,21 @@ export default React.createClass({
     render() {
         let {songs = []} = this.state;
         return  (
-            <div>
-                {songs.map (song =>
-                    <div style={{paddingTop: 20}} key={song.id}>
-                        Title: {song.Title} <br />
-                        Writen By: {song.Writer}
-                    </div>
-                )}
+            <div className="row">
+                <div className="col-md-6">
+
+                    {songs.map (song =>
+                        <div style={{paddingTop: 20}} key={song.id}>
+                            <Link to={`/songs/${song.id}`}>
+                                Title: {song.Title} <br />
+                                Writen By: {song.Writer}
+                            </Link>
+                        </div>
+                    )}
+                </div>
+                <div className="col-md-6">
+                    {this.props.children}
+                </div>
             </div>
         )
     }
