@@ -5,7 +5,7 @@
   "scripts": {
     "build": "babel src --out-dir lib",
     "pack": "webpack --config=app.webpack.config.babel.js",
-    "prestart": "npm run build -- --watch && npm run pack -- --watch &",
+    "prestart": "npm run build -- --watch & npm run pack -- --watch &",
     "start": "nodemon --watch lib/server --watch dist lib/server/index.js"
   },
   "author": "Val G",
