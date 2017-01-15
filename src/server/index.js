@@ -5,6 +5,7 @@ import renderPage from './page';
 
 const app = express();
 
+app.use('/dist', express.static('dist'));
 app.use('/data', express.static('data'));
 app.get('/api/places', places);
 app.get('/api/home', home);
