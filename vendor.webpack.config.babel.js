@@ -3,7 +3,7 @@ import AssetsPlugin from 'assets-webpack-plugin';
 
 export default {
     entry: {
-        vendor: ['react', 'react-dom', 'react-router']
+        vendor: ['react', 'react-dom', 'react-router', 'react-helmet']
     },
     output:{
         path: './dist',

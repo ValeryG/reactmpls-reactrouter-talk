@@ -1,5 +1,8 @@
 import React from 'react';
 
+import Helmet from 'react-helmet';
+
+
 export default React.createClass({
 
     getInitialState() {
@@ -16,6 +19,14 @@ export default React.createClass({
         return  (
 
             <div>
+                <Helmet
+                    script={[
+                        {src:"https://nthitz.github.io/turndownforwhatjs/tdfw.js"}
+
+                    ]}
+                />
+
+
                 <span dangerouslySetInnerHTML={{__html: text}} />
             </div>
         )
