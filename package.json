@@ -5,6 +5,7 @@
   "scripts": {
     "build": "babel src --out-dir lib",
     "pack": "webpack --config=app.webpack.config.babel.js",
+    "pack:vendor": "webpack --config=vendor.webpack.config.babel.js -p",
     "prestart": "npm run build -- --watch & npm run pack -- --watch &",
     "start": "nodemon --watch lib/server --watch dist lib/server/index.js"
   },

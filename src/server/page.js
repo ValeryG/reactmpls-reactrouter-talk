@@ -1,4 +1,4 @@
-export default (assets) => {
+export default (assets, vendorAssets) => {
     return `
         <html>
             <head>
@@ -9,8 +9,9 @@ export default (assets) => {
                     <div id="root"></div>
                 </div>
 
+                <script src="${vendorAssets.vendor.js}"></script>
                 <script src="${assets.main.js}"></script>
-                
+
             </body>
         </html>
     `;

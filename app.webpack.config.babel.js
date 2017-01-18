@@ -14,6 +14,10 @@ export default {
     plugins: [
             new AssetsPlugin({
                 filename: 'dist/assets.json'
+            }),
+            new webpack.DllReferencePlugin({
+                  context: '.',
+                  manifest: require('./dist/vendor_manifest.json')
             })
     ],
     module: {
