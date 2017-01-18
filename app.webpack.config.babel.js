@@ -8,5 +8,10 @@ export default {
         path: './dist',
         filename:'[name].bundle.js',
         publicPath: '/dist/'
+    },
+    module: {
+        loaders: [
+            {include: /.json$/, loaders: ["json-loader"]}
+        ]
     }
 }

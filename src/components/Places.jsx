@@ -1,15 +1,12 @@
 import React from 'react';
+
+import placesData from '../../data/places';
+
 export default React.createClass({
 
     getInitialState() {
-        return {places:[]};
+        return {places: placesData.slice(0, 100)};
     },
-
-    componentDidMount() {
-            fetch("/api/places?n=100").then(res =>res.json())
-                    .then(places => this.setState({places}));
-    },
-
 
     render() {
         let {places = []} = this.state;
