@@ -7,13 +7,17 @@ const app = express();
 
 app.use('/dist', express.static('dist'));
 app.use('/data', express.static('data'));
+
 app.get('/api/places', places);
 app.get('/api/home', home);
 
-app.get('*', (req, res) => {
+import assets from '../../dist/assets.json';
+
+
+app.get(/^((?!dist|api|data).)*$/, (req, res) => {
     res
         .set('Content-Type', 'text/html')
-        .status(200).send(renderPage());
+        .status(200).send(renderPage(assets));
 });
 
 app.listen(3000, () => console.log('listening on port 3000'));

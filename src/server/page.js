@@ -1,4 +1,4 @@
-export default () => {
+export default (assets) => {
     return `
         <html>
             <head>
@@ -9,7 +9,7 @@ export default () => {
                     <div id="root"></div>
                 </div>
 
-                <script src="/dist/main.bundle.js"></script>
+                <script src="${assets.main.js}"></script>
                 
             </body>
         </html>
