@@ -15,6 +15,7 @@ export default React.createClass({
 
     render() {
         let {songs = []} = this.state;
+        debugger;
         return  (
             <div className="row">
                 <div className="col-md-6">

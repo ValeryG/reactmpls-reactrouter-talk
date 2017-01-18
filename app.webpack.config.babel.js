@@ -6,6 +6,8 @@ export default {
 
     entry: './lib/app.js',
 
+    devtool: 'source-map',
+
     output:{
         path: './dist',
         filename: '[name].bundle.[chunkhash].js',
@@ -22,7 +24,15 @@ export default {
     ],
     module: {
         loaders: [
-            {include: /.json$/, loaders: ["json-loader"]}
+            {include: /.json$/, loaders: ["json-loader"]},
+            {
+                loader: 'babel-loader',
+                test: /.jsx?$/,
+                exclude: /(node_modules|bower_components)/,
+                query: {
+                    "plugins": ["transform-runtime"]
+                }
+            },
         ]
     }
 }
